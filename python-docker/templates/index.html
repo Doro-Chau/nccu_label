@@ -1,27 +1,97 @@
-<html>
-  <head>
-    <style type="text/css">
-      body {
-        background: black;
-        color: white;
-      }
-      div.container {
-        max-width: 500px;
-        margin: 100px auto;
-        border: 20px solid white;
-        padding: 10px;
-        text-align: center;
-      }
-      h4 {
-        text-transform: uppercase;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <h4>Cat Gif of the day</h4>
-      <img src="{{url}}" />
-      <p><small>Courtesy: <a href="http://www.buzzfeed.com/copyranter/the-best-cat-gif-post-in-the-history-of-cat-gifs">Buzzfeed</a></small></p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Creating Fixed Header and Footer with CSS</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+<script src="{{url_for('static', filename='js/popup.js')}}"></script>
+</head>
+<body>
+    <div class="fixed-header">
+      <nav>
+        <ul>
+          <li><a href="#">政大郵局</a></li>
+          <li><a href="#">信用卡</a>
+            <ul>
+              <li><a href="click">餐飲優惠</a></li>
+              <li><a href="click">百貨購物</a></li>
+              <li><a href="click">網路購物</a></li>
+              <li><a href="click">國內旅遊</a></li>
+              <li><a href="#">國外旅遊</a></li>
+              <li><a href="#">大眾運輸</a></li>
+              <li><a href="#">汽機車加油</a></li>
+            </ul>
+          </li>
+          <li><a href="#">保險</a>
+            <ul>
+              <li><a href="#">壽險保障保險</a></li>
+              <li><a href="#">投資型保險</a></li>
+              <li><a href="#">意外/醫療保險</a></li>
+              <li><a href="#">儲蓄型保險</a></li>
+              <li><a href="#">高齡化/微型保險</a></li>
+              <li><a href="#">其他保險</a></li>
+            </ul>
+          </li>
+          <li><a href="#">投資</a>
+            <ul>
+              <li><a href="#">股票/ETF</a></li>
+              <li><a href="#">基金</a></li>
+              <li><a href="#">外匯</a></li>
+              <li><a href="#">債券</a></li>
+              <li><a href="#">結構型商品</a></li>
+            </ul>
+          </li>
+        </ul>
+        <div class="openBtn">
+          <div class="openButton" onclick="openForm()"><strong>登入</strong></button>
+        </div>
+        <div class="loginPopup">
+          <div class="formPopup" id="popupForm">
+            <form action="{{ url_for('login_home') }}" method="post" class="formContainer">
+              <h2>Please Log in</h2>
+              <label for="email">
+                <strong>E-mail</strong>
+              </label>
+              <input type="text" id="email" placeholder="Your Email" name="email" required>
+              <label for="psw">
+                <strong>Password</strong>
+              </label>
+              <input type="password" id="psw" placeholder="Your Password" name="psw" required>
+              <button type="submit" class="btn">Log in</button>
+              <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </form>
+          </div>
+        </div>
+  
+
+        
+        
+      </nav>
+
+      
     </div>
-  </body>
+    
+
+
+    <Section class="img-slider">
+      <div class="slider-container">
+        
+        <div class="slide">
+          <img src="{{ url_for('static', filename = 'images/Picture1.png')}}">
+        </div>
+        
+        <div class="slide">
+          <img src="{{ url_for('static', filename = 'images/Picture2.png')}}">
+        </div>
+    
+        <div class="slide">
+          <img src="{{ url_for('static', filename = 'images/Picture3.png')}}">
+        </div>
+        
+      </div>
+    </Section> 
+    <div class="fixed-footer">
+        <div class="container">Copyright &copy; 2016 Your Company</div>        
+    </div>
+</body>
 </html>

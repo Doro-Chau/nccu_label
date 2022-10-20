@@ -1,0 +1,164 @@
+body{        
+    padding-top: 60px;
+}
+
+.fixed-header, .fixed-footer{
+    width: 100%;
+    position: fixed;      
+    background: rgb(206, 33, 33);
+    padding: 3px;
+    color: #fff;
+}
+.fixed-header{
+    top: 0;
+}
+.fixed-footer{
+    bottom: 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+.img-slider {
+    position: relative;
+    width: 100vw;
+    height: 400px;
+    z-index: -1;
+}
+.img-slider .slider-container {
+    position: absolute;
+    width: 300%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    animation: slider 5s infinite;
+}
+.img-slider .slider-container .slide {
+    position: relative;
+    width: 33.33333333%;
+    height: 100%;
+    float: left;
+    overflow: hidden
+}
+
+@keyframes slider {
+    0%, 25%, 100%{left: 0}
+    
+    30%, 55%{left: -100%}
+    
+    60%, 85%{left: -200%}
+}
+
+body{ margin:0; font-family:'tahoma'}
+.login {
+    float: right;
+    margin: 20px 30px 0 0;
+}
+nav ul {
+  margin:0;padding:0;
+  list-style-type:none;
+  float:left;
+  display:inline-block;
+}
+
+nav ul li {
+  position:relative;
+  margin:0 20px 0 0;
+  float:left;
+  display:inline-block;
+}
+
+li > a:after { content: ' »'; } /* Change this in order to change the Dropdown symbol */
+
+li > a:only-child:after { content: ''; }
+
+nav ul li a {
+  padding:20px;
+  display:inline-block;
+  color:white;
+  text-decoration:none;
+}
+
+nav ul li a:hover {
+  opacity:0.5;
+}
+
+nav ul li ul {
+  display:none;
+  position:fixed;
+  left:0;
+  background:#37bc9b;
+  float:left;
+}
+
+nav ul li ul li {
+  width:100%;
+  border-bottom:1px solid rgba(255,255,255,.3);
+}
+
+nav ul li:hover ul {
+  display:block;
+}
+
+
+.openBtn {
+display: flex;
+justify-content: right;
+}
+.openButton {
+margin: 20px 30px;
+cursor: pointer;
+position: fixed;
+}
+.loginPopup {
+position: relative;
+text-align: center;
+width: 100%;
+}
+.formPopup {
+display: none;
+position: fixed;
+left: 45%;
+top: 5%;
+transform: translate(-50%, 5%);
+border: 3px solid #999999;
+z-index: 9;
+}
+.formContainer {
+max-width: 300px;
+padding: 20px;
+background-color: #37bc9b;
+}
+.formContainer input[type=text],
+.formContainer input[type=password] {
+width: 100%;
+padding: 15px;
+margin: 5px 0 20px 0;
+border: none;
+background: #eee;
+}
+.formContainer input[type=text]:focus,
+.formContainer input[type=password]:focus {
+background-color: #ddd;
+outline: none;
+}
+.formContainer .btn {
+padding: 12px 20px;
+border: none;
+background-color: #8ebf42;
+color: #fff;
+cursor: pointer;
+width: 100%;
+margin-bottom: 15px;
+opacity: 0.8;
+}
+.formContainer .cancel {
+background-color: #cc0000;
+}
+.formContainer .btn:hover,
+.openButton:hover {
+opacity: 1;
+}
