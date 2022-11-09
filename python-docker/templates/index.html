@@ -2,24 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Creating Fixed Header and Footer with CSS</title>
+<title>IBM 銀行</title>
 <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-<script src="{{url_for('static', filename='js/popup.js')}}"></script>
+<script src="{{url_for('static', filename='js/main.js')}}"></script>
 </head>
 <body>
     <div class="fixed-header">
       <nav>
-        <ul>
-          <li><a href="#">政大郵局</a></li>
+        <ul class="tag-list">
+          <li><a href="/">IBM 銀行</a></li>
           <li><a href="#">信用卡</a>
             <ul>
-              <li><a href="click">餐飲優惠</a></li>
-              <li><a href="click">百貨購物</a></li>
-              <li><a href="click">網路購物</a></li>
-              <li><a href="click">國內旅遊</a></li>
-              <li><a href="#">國外旅遊</a></li>
-              <li><a href="#">大眾運輸</a></li>
-              <li><a href="#">汽機車加油</a></li>
+              <li><a href="cardintro">卡片介紹</a></li>
+              <li><a href="carddiscount">刷卡優惠</a></li>
             </ul>
           </li>
           <li><a href="#">保險</a>
@@ -41,18 +36,26 @@
               <li><a href="#">結構型商品</a></li>
             </ul>
           </li>
+          <li><a href="#">帳戶</a>
+            <ul>
+              <li><a href="#">一般帳戶</a></li>
+              <li><a href="#">外幣帳戶</a></li>
+              <li><a href="#">數位帳戶</a></li>
+              <li><a href="#">證券帳戶</a></li>
+            </ul>
+          </li>
         </ul>
         <div class="openBtn">
-          <div class="openButton" onclick="openForm()"><strong>登入</strong></button>
+          <div class="openButton" onclick="openForm()"><strong>{{ state }}</strong></button>
         </div>
         <div class="loginPopup">
           <div class="formPopup" id="popupForm">
-            <form action="{{ url_for('login_home') }}" method="post" class="formContainer">
+            <form method="post" class="formContainer" id="formContainer">
               <h2>Please Log in</h2>
               <label for="email">
-                <strong>E-mail</strong>
+                <strong>Account</strong>
               </label>
-              <input type="text" id="email" placeholder="Your Email" name="email" required>
+              <input type="text" id="email" placeholder="Your Account" name="email" required>
               <label for="psw">
                 <strong>Password</strong>
               </label>
@@ -62,36 +65,21 @@
             </form>
           </div>
         </div>
-  
-
-        
-        
       </nav>
-
-      
     </div>
-    
-
-
+    {% block body %}
     <Section class="img-slider">
       <div class="slider-container">
-        
+        {% for image in images %}
         <div class="slide">
-          <img src="{{ url_for('static', filename = 'images/Picture1.png')}}">
+          <img src="{{ url_for('static', filename = 'images/'+image)}}">
         </div>
-        
-        <div class="slide">
-          <img src="{{ url_for('static', filename = 'images/Picture2.png')}}">
-        </div>
-    
-        <div class="slide">
-          <img src="{{ url_for('static', filename = 'images/Picture3.png')}}">
-        </div>
-        
+        {% endfor %}
       </div>
-    </Section> 
+    </Section>
+    {% endblock %} 
     <div class="fixed-footer">
-        <div class="container">Copyright &copy; 2016 Your Company</div>        
+        <div class="container">Copyright &copy; 2022 IBM 銀行</div>        
     </div>
 </body>
 </html>

@@ -1,0 +1,28 @@
+{% extends "index.html" %}
+{% block body %}
+<h2>信用卡介紹</h2>
+<div class="card-intro-flex">
+    <div>
+        <img src="{{ url_for('static', filename = 'images/cardintro1.png')}}" class="card-intro-image">
+        <div class="interest-get">
+            <div>我有興趣</div>
+            <div>我要申辦</div>
+        </div>
+        
+    </div>
+    <div>
+        <img src="{{ url_for('static', filename = 'images/cardintro2.png')}}" class="card-intro-image">
+        <div class="interest-get">
+            <div>我有興趣</div>
+            <div>我要申辦</div>
+        </div>
+    </div>
+    <div>
+        <img src="{{ url_for('static', filename = 'images/cardintro1.png')}}" class="card-intro-image">
+        <div class="interest-get">
+            <div>我有興趣</div>
+            <div>我要申辦</div>
+        </div>
+    </div>
+</div>
+{% endblock %}

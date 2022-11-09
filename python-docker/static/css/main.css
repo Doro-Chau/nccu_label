@@ -2,10 +2,14 @@ body{
     padding-top: 60px;
 }
 
+.token{
+    display: block;
+}
+
 .fixed-header, .fixed-footer{
     width: 100%;
     position: fixed;      
-    background: rgb(206, 33, 33);
+    background: #0f62fe;
     padding: 3px;
     color: #fff;
 }
@@ -34,14 +38,14 @@ body{
     top: 0;
     left: 0;
     overflow: hidden;
-    animation: slider 5s infinite;
+    animation: slider 10s infinite;
 }
 .img-slider .slider-container .slide {
     position: relative;
     width: 33.33333333%;
     height: 100%;
     float: left;
-    overflow: hidden
+    overflow: hidden;
 }
 
 @keyframes slider {
@@ -71,7 +75,7 @@ nav ul li {
   display:inline-block;
 }
 
-li > a:after { content: ' »'; } /* Change this in order to change the Dropdown symbol */
+li > a:after { content:' v'}
 
 li > a:only-child:after { content: ''; }
 
@@ -90,7 +94,7 @@ nav ul li ul {
   display:none;
   position:fixed;
   left:0;
-  background:#37bc9b;
+  background:#33b1ff;
   float:left;
 }
 
@@ -121,8 +125,8 @@ width: 100%;
 .formPopup {
 display: none;
 position: fixed;
-left: 45%;
-top: 5%;
+left: 50%;
+top: 15%;
 transform: translate(-50%, 5%);
 border: 3px solid #999999;
 z-index: 9;
@@ -130,7 +134,7 @@ z-index: 9;
 .formContainer {
 max-width: 300px;
 padding: 20px;
-background-color: #37bc9b;
+background-color: #0f62fe;
 }
 .formContainer input[type=text],
 .formContainer input[type=password] {
@@ -146,19 +150,33 @@ background-color: #ddd;
 outline: none;
 }
 .formContainer .btn {
-padding: 12px 20px;
-border: none;
-background-color: #8ebf42;
-color: #fff;
-cursor: pointer;
-width: 100%;
-margin-bottom: 15px;
-opacity: 0.8;
+    padding: 0px 35px;
+    border: none;
+    background-color: #0f62fe;
+    cursor: pointer;
+    color: white;
+    margin-bottom: 15px;
 }
 .formContainer .cancel {
-background-color: #cc0000;
+background-color: #0f62fe;
 }
 .formContainer .btn:hover,
 .openButton:hover {
-opacity: 1;
+opacity: 0.5;
+}
+
+.card-intro-flex{
+    display: flex;
+    justify-content: space-evenly;
+}
+.card-intro-image{
+    width: 440px;
+}
+h2{
+    text-align: center;
+    margin: 30px;
+}
+.interest-get{
+    display: flex;
+    justify-content: space-evenly;
 }

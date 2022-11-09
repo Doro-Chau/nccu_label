@@ -8,6 +8,11 @@ __pycache__/
 
 # Distribution / packaging
 .Python
+python-docker/static/images/
+python-docker/.DS_Store
+python-docker/.ssh/
+python-docker/static/.DS_Store
+.DS_Store
 build/
 develop-eggs/
 dist/
