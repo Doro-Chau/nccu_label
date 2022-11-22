@@ -19,29 +19,25 @@
           </li>
           <li><a href="#">保險</a>
             <ul>
-              <li><a href="#">壽險保障保險</a></li>
-              <li><a href="#">投資型保險</a></li>
-              <li><a href="#">意外/醫療保險</a></li>
-              <li><a href="#">儲蓄型保險</a></li>
-              <li><a href="#">高齡化/微型保險</a></li>
-              <li><a href="#">其他保險</a></li>
+              <li><a href="investinsurance">投資型保險</a></li>
+              <li><a href="medicalinsurance">意外/醫療保險</a></li>
+              <li><a href="otherinsurance">其他保險</a></li>
             </ul>
           </li>
           <li><a href="#">投資</a>
             <ul>
-              <li><a href="#">股票/ETF</a></li>
-              <li><a href="#">基金</a></li>
-              <li><a href="#">外匯</a></li>
-              <li><a href="#">債券</a></li>
-              <li><a href="#">結構型商品</a></li>
+              <li><a href="Taiwanstock">台股</a></li>
+              <li><a href="USstock">美股</a></li>
+              <li><a href="fund">基金</a></li>
+              <li><a href="foreignexchange">外匯</a></li>
             </ul>
           </li>
           <li><a href="#">帳戶</a>
             <ul>
-              <li><a href="#">一般帳戶</a></li>
-              <li><a href="#">外幣帳戶</a></li>
-              <li><a href="#">數位帳戶</a></li>
-              <li><a href="#">證券帳戶</a></li>
+              <li><a href="normalaccount">一般帳戶</a></li>
+              <li><a href="foreignaccount">外幣帳戶</a></li>
+              <li><a href="digitalaccount">數位帳戶</a></li>
+              <li><a href="securityaccount">證券帳戶</a></li>
             </ul>
           </li>
         </ul>
@@ -61,7 +57,7 @@
               </label>
               <input type="password" id="psw" placeholder="Your Password" name="psw" required>
               <button type="submit" class="btn">Log in</button>
-              <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+              <button class="btn-cancel" onclick="closeForm()">Close</button>
             </form>
           </div>
         </div>
@@ -72,7 +68,7 @@
       <div class="slider-container">
         {% for image in images %}
         <div class="slide">
-          <img src="{{ url_for('static', filename = 'images/'+image)}}">
+          <img src="{{ url_for('static', filename = 'images/'+image)}}" class="index-image">
         </div>
         {% endfor %}
       </div>

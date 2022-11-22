@@ -2,10 +2,6 @@ body{
     padding-top: 60px;
 }
 
-.token{
-    display: block;
-}
-
 .fixed-header, .fixed-footer{
     width: 100%;
     position: fixed;      
@@ -38,7 +34,7 @@ body{
     top: 0;
     left: 0;
     overflow: hidden;
-    animation: slider 10s infinite;
+    animation: slider 15s infinite;
 }
 .img-slider .slider-container .slide {
     position: relative;
@@ -47,7 +43,9 @@ body{
     float: left;
     overflow: hidden;
 }
-
+.index-image{
+  width: 100%;
+}
 @keyframes slider {
     0%, 25%, 100%{left: 0}
     
@@ -96,6 +94,7 @@ nav ul li ul {
   left:0;
   background:#33b1ff;
   float:left;
+  min-width: 450px;
 }
 
 nav ul li ul li {
@@ -157,8 +156,13 @@ outline: none;
     color: white;
     margin-bottom: 15px;
 }
-.formContainer .cancel {
-background-color: #0f62fe;
+.formContainer .btn-cancel {
+  padding: 0px 35px;
+  border: none;
+  background-color: #0f62fe;
+  cursor: pointer;
+  color: white;
+  margin-bottom: 15px;
 }
 .formContainer .btn:hover,
 .openButton:hover {
@@ -169,8 +173,19 @@ opacity: 0.5;
     display: flex;
     justify-content: space-evenly;
 }
+
+.card-intro-flex-multi{
+  display: flex;
+  justify-content: space-evenly;
+  flex-flow: wrap;
+  margin: 0px 0px 50px 0px;
+}
+
 .card-intro-image{
     width: 440px;
+}
+.card-intro-image-foreign{
+  width: 900px;
 }
 h2{
     text-align: center;
@@ -179,4 +194,74 @@ h2{
 .interest-get{
     display: flex;
     justify-content: space-evenly;
+}
+
+
+.introPopup {
+  display: none;
+  position: fixed;
+  left: 50%;
+  top: 25%;
+  transform: translate(-50%, 5%);
+  background: #33b1ff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 3%;
+  max-width: 350px;
+  }
+
+.interest-button{
+  background-color: #eee;
+  padding: 10px;
+  border-radius: 10%;
+}
+.interest-button:hover{
+  cursor: pointer;
+}
+
+.interest-button-multi{
+  background-color: #eee;
+  padding: 10px;
+  border-radius: 10%;
+  margin: -10px 0px 0px 0px;
+}
+.interest-button-multi:hover{
+  cursor: pointer;
+}
+
+
+.btn-cancel:hover{
+  cursor: pointer;
+}
+
+card-intro-flex#blur.active{
+  filter: blur(20px);
+  pointer-events: none;
+}
+
+.account-image{
+  margin-bottom: -300px;
+}
+
+.account-button{
+  background-color: #0f62fe;
+  color: white;
+  padding: 20px;
+  border-radius: 10%;
+  margin: 0px 0px 0px 1200px;
+  position: fixed;
+}
+.account-button:hover{
+  cursor: pointer;
+}
+
+.account-login-image{
+  width: 100%;
+  margin-bottom: -720px;
+}
+.account-login-text{
+  color: #137A79;
+  margin: 0px 0px 0px 575px;
+  font-size: 28px;
+  font-weight: bold;
 }

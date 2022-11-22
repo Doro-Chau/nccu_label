@@ -1,0 +1,27 @@
+{% extends "index.html" %}
+{% block body %}
+<h2>{{category}}</h2>
+<div class="card-intro-flex-multi">
+    {% for item in items %}
+    <div>
+        {% if category == '外匯介紹'%}
+            <img src="{{ url_for('static', filename = 'images/'+item[0])}}" class="card-intro-image-foreign">
+        {% else %}
+            <img src="{{ url_for('static', filename = 'images/'+item[0])}}" class="card-intro-image">
+        {% endif %}
+        <div class="interest-get">
+            <div class="interest-button-multi" onclick="openIntroMulti('{{item[1]}}', '{{item[2]}}', '{{item[3]}}')">我有興趣</div>
+        </div>
+        
+    </div>
+    {% endfor %}
+    
+    
+    
+</div>
+<div class="introPopup" id="popupIntro">
+    <h3></h3>
+    <p></p>
+    <div class="btn-cancel" onclick="closeIntroMulti()">Close</div>
+</div>
+{% endblock %}
