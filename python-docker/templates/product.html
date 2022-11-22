@@ -1,0 +1,24 @@
+{% extends "index.html" %}
+{% block body %}
+<h2>{{ category }}介紹</h2>
+<div class="card-intro-flex">
+    {% for item in items %}
+    <div>
+        <img src="{{ url_for('static', filename = 'images/'+item[0])}}" class="card-intro-image">
+        <div class="interest-get">
+            <div class="interest-button" onclick="openIntro('{{item[1]}}', '{{item[2]}}', '{{item[4]}}')">我有興趣</div>
+            <div class="interest-button" onclick="applyFor('{{item[1]}}', '{{item[3]}}', '{{item[5]}}')">我要申辦</div>
+        </div>
+        
+    </div>
+    {% endfor %}
+    
+    
+    
+</div>
+<div class="introPopup" id="popupIntro">
+    <h3></h3>
+    <p></p>
+    <div class="btn-cancel" onclick="closeIntro()">Close</div>
+</div>
+{% endblock %}

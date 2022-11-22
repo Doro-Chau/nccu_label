@@ -1,0 +1,5 @@
+{% extends "index.html" %}
+{% block body %}
+<img src="{{ url_for('static', filename = 'images/'+image)}}" class="account-image">
+<div class="account-button" onclick="applyFor('{{item[0]}}', '{{item[1]}}', '{{item[2]}}')">立即申辦</div>
+{% endblock %}

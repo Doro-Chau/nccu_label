@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>IBM 銀行</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+<script src="{{url_for('static', filename='js/main.js')}}"></script>
+</head>
+<body>
+    <div class="fixed-header">
+      <nav>
+        <ul class="tag-list">
+          <li><a href="/">IBM 銀行</a></li>
+          <li><a href="#">信用卡</a>
+            <ul>
+              <li><a href="cardintro">卡片介紹</a></li>
+              <li><a href="carddiscount">刷卡優惠</a></li>
+            </ul>
+          </li>
+          <li><a href="#">保險</a>
+            <ul>
+              <li><a href="investinsurance">投資型保險</a></li>
+              <li><a href="medicalinsurance">意外/醫療保險</a></li>
+              <li><a href="otherinsurance">其他保險</a></li>
+            </ul>
+          </li>
+          <li><a href="#">投資</a>
+            <ul>
+              <li><a href="Taiwanstock">台股</a></li>
+              <li><a href="USstock">美股</a></li>
+              <li><a href="fund">基金</a></li>
+              <li><a href="foreignexchange">外匯</a></li>
+            </ul>
+          </li>
+          <li><a href="#">帳戶</a>
+            <ul>
+              <li><a href="normalaccount">一般帳戶</a></li>
+              <li><a href="foreignaccount">外幣帳戶</a></li>
+              <li><a href="digitalaccount">數位帳戶</a></li>
+              <li><a href="securityaccount">證券帳戶</a></li>
+            </ul>
+          </li>
+        </ul>
+        <div class="openBtn">
+          <div class="openButton" onclick="openForm()"><strong>{{ state }}</strong></button>
+        </div>
+        <div class="loginPopup">
+          <div class="formPopup" id="popupForm">
+            <form method="post" class="formContainer" id="formContainer">
+              <h2>Please Log in</h2>
+              <label for="email">
+                <strong>Account</strong>
+              </label>
+              <input type="text" id="email" placeholder="Your Account" name="email" required>
+              <label for="psw">
+                <strong>Password</strong>
+              </label>
+              <input type="password" id="psw" placeholder="Your Password" name="psw" required>
+              <button type="submit" class="btn">Log in</button>
+              <button class="btn-cancel" onclick="closeForm()">Close</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </div>
+    {% block body %}
+    <Section class="img-slider">
+      <div class="slider-container">
+        {% for image in images %}
+        <div class="slide">
+          <img src="{{ url_for('static', filename = 'images/'+image)}}" class="index-image">
+        </div>
+        {% endfor %}
+      </div>
+    </Section>
+    {% endblock %} 
+    <div class="fixed-footer">
+        <div class="container">Copyright &copy; 2022 IBM 銀行</div>        
+    </div>
+</body>
+</html>
