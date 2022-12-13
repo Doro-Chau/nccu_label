@@ -567,7 +567,7 @@ def login():
         'account': account,
         'password': sha256_crypt.encrypt(psw)
     }
-    private_key = open('.ssh/id_rsa', 'r').read()
+    #private_key = open('.ssh/id_rsa', 'r').read()
     access_token = jwt.encode(payload, app.config['SECRET_KEY'], algorithm='HS256')
     
     cursor.execute("UPDATE member_prof SET access_token=%s WHERE account=%s",(access_token, account))
